@@ -1,0 +1,18 @@
+{
+  "name": "my-portfolio-website",
+  "version": "1.0.0",
+  "description": "A portfolio site to host all my projects from past to present.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "Rita Law",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "helmet": "^3.1.0"
+  }
+}
