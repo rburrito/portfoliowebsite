@@ -21,13 +21,13 @@ app.listen(port, (req, res)=>{
 });
 
 sass.render({
-  file: "./scss/main.scss"
+  file: "./public/scss/main.scss"
 }, (err, result)=>{
  if (err){
    console.log("Unable to render scss file. Error :" + err);
    return;
  }
- fs.writeFile('./css/output.css', result.css, (err)=>{
+ fs.writeFile('./public/css/output.css', result.css, (err)=>{
    if (err){
      console.log("Error writing file to disk: " + err);
      return;
@@ -35,7 +35,7 @@ sass.render({
  });
 });
 
-app.use(express.static('css'));
+app.use(express.static('public'));
 
 app.get("/", (req, res)=>{
  res.render("home.html")
