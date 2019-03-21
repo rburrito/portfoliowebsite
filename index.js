@@ -8,6 +8,8 @@ const fs = require("fs");
 app.use(helmet.noSniff());
 app.use(helmet.frameguard({action:"deny"}));
 app.use(helmet.xssFilter());
+app.use(helmet.noCache());
+app.use(helmet.hidePoweredBy());
 
 
 let env= new nunjucks.Environment(new nunjucks.FileSystemLoader("views"));
@@ -39,4 +41,8 @@ app.use(express.static('public'));
 
 app.get("/", (req, res)=>{
  res.render("home.html")
+});
+
+app.get("/about", (req, res)=>{
+ res.render("about.html")
 });

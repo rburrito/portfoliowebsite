@@ -8,16 +8,20 @@
 {% endblock %}
 </title>
 {% endblock%}
-<link href="/css/output.css" rel="stylesheet" type='text/css'/>
+<link href="https://fonts.googleapis.com/css?family=Heebo|Gabriela" rel="stylesheet"/ type="text/css">
+<link href="/css/output.css?cache=no" rel="stylesheet" type='text/css'/>
+
 {% block extraHead %}
 {% endblock %}
 </head>
 
 <body>
+  <div class="block-body">
 {% block body %}
 
 <div class="beforeMain">
 {% block beforeMain %}
+<div id="name">Rita Law</div>
 <div id="nav-bar">
   <a href ="/">Home</a>
   <a href ="/projects">Projects </a>
@@ -32,5 +36,6 @@
 </div>
 
 {% endblock %}
+</div>
 </body>
 </html>
