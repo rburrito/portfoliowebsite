@@ -1,8 +1,9 @@
-$primary-color: linear-gradient(to right top, #8a99ae, #8698bf, #8a95ce, #9790da, #ab88e1);;
-$font-stack: Gabriela, Heebo;
+$primary-color: linear-gradient(to right top, #06740b, #00644d, #00507f, #00368d, #040466);
+$font-stack: 'Open Sans', Gabriela;
 $letter-size: 1.5em;
 $font-colors: white;
-$left-padding: 5px;
+$padding: 0px 15px 0px 15px;
+$name-font: 'Homemade Apple';
 
 body {
   background: $primary-color;
@@ -13,23 +14,56 @@ body {
   height: 100vh;
   margin: 0;
 	padding: 0;
-  .beforeMain {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr;
-  background-color: slategray;
-  #nav-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   a {
       text-decoration: none;
       color: $font-colors;
   }
+  a:hover{
+     font-size: 2em;
+  }
+  .beforeMain {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+//  background-color: slategray;
+  #nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: $padding;
   }
 
   #name {
-    font-size: 2.25em;
+    font-size: 2.5em;
+    font-family: $name-font;
+    padding: $padding;
   }
+  }
+
+  .main{
+    h1 {
+      padding: 0px;
+      margin: 0px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      .end {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        border-style: groove;
+      }
+    }
+    .insideMain {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+    padding: $padding;
   }
 }

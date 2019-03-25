@@ -5,6 +5,8 @@ const nunjucks = require("nunjucks");
 const sass = require("node-sass");
 const fs = require("fs");
 
+const sixtyDaysInSeconds = 5184000;
+app.use(helmet.hsts({maxAge: sixtyDaysInSeconds}));
 app.use(helmet.noSniff());
 app.use(helmet.frameguard({action:"deny"}));
 app.use(helmet.xssFilter());
@@ -45,4 +47,8 @@ app.get("/", (req, res)=>{
 
 app.get("/about", (req, res)=>{
  res.render("about.html")
+});
+
+app.get("/projects", (req, res)=>{
+  res.render("projects.html")
 });
