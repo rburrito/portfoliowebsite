@@ -21,32 +21,32 @@ env.express(app);
 const port =process.env.PORT || 3000;
 
 app.listen(port, (req, res)=>{
-   console.log("Now listening on port "+ port);
+  console.log("Now listening on port "+ port);
 });
 
 sass.render({
   file: "./public/scss/main.scss"
 }, (err, result)=>{
- if (err){
-   console.log("Unable to render scss file. Error :" + err);
-   return;
- }
- fs.writeFile('./public/css/output.css', result.css, (err)=>{
-   if (err){
-     console.log("Error writing file to disk: " + err);
-     return;
-   }
- });
+  if (err){
+    console.log("Unable to render scss file. Error :" + err);
+    return;
+  }
+  fs.writeFile('./public/css/output.css', result.css, (err)=>{
+    if (err){
+      console.log("Error writing file to disk: " + err);
+      return;
+    }
+  });
 });
 
 app.use(express.static('public'));
 
 app.get("/", (req, res)=>{
- res.render("home.html")
+  res.render("home.html")
 });
 
 app.get("/about", (req, res)=>{
- res.render("about.html")
+  res.render("about.html")
 });
 
 app.get("/projects", (req, res)=>{

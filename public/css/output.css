@@ -1,17 +1,17 @@
 body {
-  background: linear-gradient(to right top, #06740b, #00644d, #00507f, #00368d, #040466);
-  font-family: "Open Sans", Gabriela;
-  font-size: 1.5em;
-  color: white;
+  background: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
+  font-family: "Open Sans", Forum;
+  font-size: 1.65em;
+  color: black;
   width: auto;
   height: 100vh;
   margin: 0;
   padding: 0; }
   body a {
     text-decoration: none;
-    color: white; }
+    color: black; }
   body a:hover {
-    font-size: 2em; }
+    font-size: 1.85em; }
   body .beforeMain {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -22,27 +22,45 @@ body {
       align-items: center;
       padding: 0px 15px 0px 15px; }
     body .beforeMain #name {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
       font-size: 2.5em;
-      font-family: "Homemade Apple";
-      padding: 0px 15px 0px 15px; }
+      font-family: "Libre Barcode 39", "Homemade Apple";
+      padding: 20px 15px 0px 15px; }
   body .main {
     padding: 0px 15px 0px 15px; }
-    body .main h1 {
+    body .main h1, body .main p {
       padding: 0px;
       margin: 0px; }
-    body .main .projects {
+    body .main .projectsMain {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px; }
-      body .main .projects .end {
+      body .main .projectsMain .end {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 50px;
         border-style: groove; }
-    body .main .insideMain {
+    body .main .homeMain {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 60vh; }
+      height: 65vh;
+      width: auto; }
+    body .main .aboutMain {
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr 1fr;
+      height: 65vh;
+      width: auto; }
+      body .main .aboutMain .profileImage {
+        border-radius: 20%; }
+      body .main .aboutMain .aboutContainers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 25px 0px 25px;
+        height: 100%; }

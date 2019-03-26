@@ -2,40 +2,40 @@
 <html>
 
 <head>
-{% block startHead %}
-<title>
-{% block title %}
-{% endblock %}
-</title>
-{% endblock%}
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|Gabriela" rel="stylesheet"/ type="text/css">
-<link href="/css/output.css?cache=no" rel="stylesheet" type='text/css'/>
+  {% block startHead %}
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+  {% endblock%}
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Homemade+Apple|Forum|Libre+Barcode+39" rel="stylesheet"/ type="text/css">
+  <link href="/css/output.css?cache=no" rel="stylesheet" type='text/css'/>
 
-{% block extraHead %}
-{% endblock %}
+  {% block extraHead %}
+  {% endblock %}
 </head>
 
 <body>
   <div class="block-body">
-{% block body %}
+    {% block body %}
 
-<div class="beforeMain">
-{% block beforeMain %}
-<div id="name">Rita Law</div>
-<div id="nav-bar">
-  <a href ="/">Home</a>
-  <a href ="/projects">Projects </a>
-  <a href ="/about"> About</a>
-</div>
-{% endblock %}
-</div>
+    <div class="beforeMain">
+      {% block beforeMain %}
+      <div id="name">Rita Law</div>
+      <div id="nav-bar">
+        <a href ="/">Home</a>
+        <a href ="/projects">Projects </a>
+        <a href ="/about"> About</a>
+      </div>
+      {% endblock %}
+    </div>
 
-<div class="main">
-{% block main %}
-{% endblock %}
-</div>
+    <div class="main">
+      {% block main %}
+      {% endblock %}
+    </div>
 
-{% endblock %}
-</div>
+    {% endblock %}
+  </div>
 </body>
 </html>

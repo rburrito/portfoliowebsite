@@ -1,9 +1,9 @@
-$primary-color: linear-gradient(to right top, #06740b, #00644d, #00507f, #00368d, #040466);
-$font-stack: 'Open Sans', Gabriela;
-$letter-size: 1.5em;
-$font-colors: white;
+$primary-color: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
+$font-stack: 'Open Sans', Forum;
+$letter-size: 1.65em;
+$font-colors: black;
 $padding: 0px 15px 0px 15px;
-$name-font: 'Homemade Apple';
+$name-font: 'Libre Barcode 39','Homemade Apple';
 
 body {
   background: $primary-color;
@@ -13,39 +13,41 @@ body {
   width: auto;
   height: 100vh;
   margin: 0;
-	padding: 0;
+  padding: 0;
   a {
-      text-decoration: none;
-      color: $font-colors;
+    text-decoration: none;
+    color: $font-colors;
   }
   a:hover{
-     font-size: 2em;
+    font-size: 1.85em;
   }
   .beforeMain {
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr;
-//  background-color: slategray;
-  #nav-bar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: $padding;
-  }
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 1fr;
+    #nav-bar {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: $padding;
+    }
 
-  #name {
-    font-size: 2.5em;
-    font-family: $name-font;
-    padding: $padding;
-  }
+    #name {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 2.5em;
+      font-family: $name-font;
+      padding: 20px 15px 0px 15px;
+    }
   }
 
   .main{
-    h1 {
+    h1, p {
       padding: 0px;
       margin: 0px;
     }
-    .projects {
+    .projectsMain {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 10px;
@@ -57,12 +59,31 @@ body {
         border-style: groove;
       }
     }
-    .insideMain {
+    .homeMain {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 60vh;
+      height: 65vh;
+      width: auto;
+    }
+
+    .aboutMain {
+      display: grid;
+      grid-template-columns: 1fr 2fr 3fr 1fr;
+      height: 65vh;
+      width: auto;
+      .profileImage {
+        border-radius: 20%;
+      }
+      .aboutContainers {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 25px 0px 25px;
+        height: 100%;
+      }
     }
     padding: $padding;
   }
