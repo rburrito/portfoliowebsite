@@ -4,6 +4,7 @@
   "description": "A portfolio site to host all my projects from past to present.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm test"
   },
   "keywords": [
