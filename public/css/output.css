@@ -1,66 +1,74 @@
-body {
-  background: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
-  font-family: "Open Sans", Forum;
-  font-size: 1.65em;
-  color: black;
-  width: auto;
-  height: 100vh;
-  margin: 0;
-  padding: 0; }
-  body a {
-    text-decoration: none;
-    color: black; }
-  body a:hover {
-    font-size: 1.85em; }
-  body .beforeMain {
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr; }
-    body .beforeMain #nav-bar {
+html {
+  height: 100%; }
+  html body {
+    font-family: "Open Sans", Forum;
+    font-size: 1.65em;
+    color: black;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0; }
+    html body .block-body {
+      flex-grow: 1;
+      background: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
+      height: 100%;
       display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 0px 15px 0px 15px; }
-    body .beforeMain #name {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      font-size: 2.5em;
-      font-family: "Libre Barcode 39", "Homemade Apple";
-      padding: 20px 15px 0px 15px; }
-  body .main {
-    padding: 0px 15px 0px 15px; }
-    body .main h1, body .main p {
-      padding: 0px;
-      margin: 0px; }
-    body .main .projectsMain {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 10px; }
-      body .main .projectsMain .end {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        border-style: groove; }
-    body .main .homeMain {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 65vh;
-      width: auto; }
-    body .main .aboutMain {
-      display: grid;
-      grid-template-columns: 1fr 2fr 3fr 1fr;
-      height: 65vh;
-      width: auto; }
-      body .main .aboutMain .profileImage {
-        border-radius: 20%; }
-      body .main .aboutMain .aboutContainers {
+      flex-direction: column; }
+      html body .block-body a {
+        text-decoration: none;
+        color: black; }
+      html body .block-body a:hover {
+        font-size: 1.75em; }
+      html body .block-body .beforeMain {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 1fr; }
+        html body .block-body .beforeMain #nav-bar {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 0px 1.5vw 0px 1.5vw; }
+        html body .block-body .beforeMain #name {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          font-size: 2.5em;
+          font-family: "Libre Barcode 39", "Homemade Apple";
+          padding: 2vh 1vw 0vh 1.25vw; }
+      html body .block-body .main {
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 25px 0px 25px;
-        height: 100%; }
+        padding: 0px 1.5vw 0px 1.5vw; }
+        html body .block-body .main h1, html body .block-body .main p {
+          padding: 0px;
+          margin: 0px; }
+        html body .block-body .main .projectsMain {
+          flex-grow: 1;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 1.25vw; }
+          html body .block-body .main .projectsMain .end {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-style: groove; }
+        html body .block-body .main .homeMain {
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: auto; }
+        html body .block-body .main .aboutMain {
+          flex-grow: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0px 10vw 0px 10vw; }
+          html body .block-body .main .aboutMain .profileImage {
+            border-radius: 20%; }
+          html body .block-body .main .aboutMain .aboutContainers {
+            flex-grow: 1;
+            padding: 0px 1.5vw 0px 1.5vw; }

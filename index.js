@@ -52,3 +52,7 @@ app.get("/about", (req, res)=>{
 app.get("/projects", (req, res)=>{
   res.render("projects.html")
 });
+
+app.get("/localweather", (req, res)=>{
+  res.render("localweather.html")
+});

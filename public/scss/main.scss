@@ -2,25 +2,38 @@ $primary-color: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
 $font-stack: 'Open Sans', Forum;
 $letter-size: 1.65em;
 $font-colors: black;
-$padding: 0px 15px 0px 15px;
+$padding: 0px 1.5vw 0px 1.5vw;
 $name-font: 'Libre Barcode 39','Homemade Apple';
 
+html {
+  height: 100%;
+
+
 body {
-  background: $primary-color;
   font-family: $font-stack;
   font-size: $letter-size;
   color: $font-colors;
-  width: auto;
-  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
+
+  .block-body {
+    flex-grow: 1;
+    background: $primary-color;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
   a {
     text-decoration: none;
     color: $font-colors;
   }
   a:hover{
-    font-size: 1.85em;
+    font-size: 1.75em;
   }
+
   .beforeMain {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -38,53 +51,60 @@ body {
       align-items: center;
       font-size: 2.5em;
       font-family: $name-font;
-      padding: 20px 15px 0px 15px;
+      padding: 2vh 1vw 0vh 1.25vw;
     }
   }
 
   .main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     h1, p {
       padding: 0px;
       margin: 0px;
     }
+
     .projectsMain {
+      flex-grow: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 10px;
+      grid-gap: 1.25vw;
       .end {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50px;
         border-style: groove;
       }
     }
+
     .homeMain {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 65vh;
       width: auto;
     }
 
     .aboutMain {
-      display: grid;
-      grid-template-columns: 1fr 2fr 3fr 1fr;
-      height: 65vh;
-      width: auto;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 10vw 0px 10vw;
       .profileImage {
         border-radius: 20%;
       }
       .aboutContainers {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0px 25px 0px 25px;
-        height: 100%;
+        flex-grow: 1;
+        padding: $padding;
       }
     }
+
     padding: $padding;
-  }
-}
+} // .main
+} // .block-body
+
+} // body
+
+} // html

@@ -1,0 +1,31 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+div {
+  text-align: center;
+  font-family: 'Open Sans';
+  font-size: 1.18em;
+}
+
+.btn {
+  font-size: .7em;
+  font-family: 'Open Sans';
+  border-radius: 40%;
+}
+
+h1 {
+  font-size: 2.1em;
+  font-weight: 600;
+}
+
+.writing {
+  padding-top: 15vh;
+  font-size: 1.75em;
+}
+
+.get-location,
+.row,
+.get-weather, .borough {
+}
