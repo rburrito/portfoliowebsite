@@ -1,0 +1,109 @@
+body {
+  text-align: center;
+  font-family: exo, sans serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.insideMain {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sisterdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8vh;
+  font-family: "exo", cursive;
+  font-weight: bold;
+  color: black;
+  padding-top: 4vh;
+}
+
+.momdiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxes {
+  display: flex;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1.75vw;
+  padding-left: 1.75vw;
+  font-size: 3vh;
+}
+
+button {
+  border-radius: 20%;
+  border-style: outset;
+  border-color: #cacaca;
+  font-weight: 600;
+  font-size: 3vh;
+  font-family: exo, sans serif;
+}
+
+.modifySession, .modifyBreak {
+  background-color: #f9d4d1;
+}
+
+#start {
+  background-color: #f9cdca;
+}
+
+.momdiv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2vh;
+}
+
+#sessioncontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#timercontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#start {
+  font-weight: 400;
+  border-style: outset;
+}
+
+#session {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 15vw;
+  font-size: 5vh;
+}
+
+#countdown,
+#secondsCountdown {
+  font-size: 7vh;
+}
+
+.number {
+  font-size: 5.5vh;
+  padding-right: 0.65vw;
+  padding-left: 0.65vw;
+}
