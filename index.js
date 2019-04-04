@@ -67,4 +67,8 @@ app.get("/pomodoro", (req, res)=>{
 
 app.get("/simon", (req, res)=>{
   res.render("simon.html", {title: "Simon Game"});
-})
+});
+
+app.get("/calculator", (req, res)=>{
+  res.render("calculator.html", {title: "Calculator"});
+});
