@@ -16,17 +16,20 @@ function calculateSentence(array) {
   let newAnswer;
   try {
   let answer = eval(array.join(""));
-    answer = answer.toString();
+  answer = answer.toString();
+  let indexOfExpo = answer.indexOf("e");
   if (answer==="Infinity"){
     return answer;
-  } else if (answer.includes("e")){
-    newAnswer = answer.slice(0,4);
-    let endingExponent= answer.substring(answer.indexOf("e"), answer.length);
-    answer = newAnswer + endingExponent;
-
+  } else {
+    newAnswer = parseFloat(answer.slice(0, indexOfExpo)).toFixed(3); // slices the first few digits of number string and fixes it to 3 decimal points to make it easier to display on small screen
+    if (answer.includes("e")) {
+    answer = newAnswer + answer.substring(indexOfExpo, answer.length);  // adds the shortened numbers before the exponent to the exponent display
+    console.log("includes e");
   } else if (answer > 1000000000000){
-    let exponent = answer.length - 1;
-    answer = answer[0]+"."+answer[1]+answer[2]+" E"+exponent;
+      let exponent = answer.length - 1;
+      answer = newAnswer[0]+"."+newAnswer[1]+newAnswer[2]+newAnswer[3] +"e+"+ exponent;
+      console.log("large number without e")
+    }
   }
   return answer;
   } catch (error) {
