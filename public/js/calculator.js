@@ -8,13 +8,27 @@ for (let i = 0; i < button.length; i++) {
   numberActionButtons.push(button[i]);
 }
 
-let operators = /[*/+]/;
+let operators = /[*/+-]/;
 let entry = [];
 let state = true;
 
 function calculateSentence(array) {
+  let newAnswer;
   try {
-    return eval(array.join(""));
+  let answer = eval(array.join(""));
+    answer = answer.toString();
+  if (answer==="Infinity"){
+    return answer;
+  } else if (answer.includes("e")){
+    newAnswer = answer.slice(0,4);
+    let endingExponent= answer.substring(answer.indexOf("e"), answer.length);
+    answer = newAnswer + endingExponent;
+
+  } else if (answer > 1000000000000){
+    let exponent = answer.length - 1;
+    answer = answer[0]+"."+answer[1]+answer[2]+" E"+exponent;
+  }
+  return answer;
   } catch (error) {
     state = false;
     return "Error";

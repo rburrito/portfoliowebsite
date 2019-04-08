@@ -76,34 +76,17 @@
   font-size: 3vh;
 }
 
-#equalsign {
+#equalSign {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   font-size: 4vh;
-}
-
-.equal {
   border-radius: 20px;
   background-color: darkslategray;
   color: white;
-  height: 14vh;
-  width: 8vh;
-  z-index: 2;
-  position: abolute;
+  height: 7.55vh;
+  width: 20vh;
 }
 
-.no-show {
-  visibility: hidden;
-  width: 4vw;
-}
-.hrectangle {
-  border-radius: 20px;
-  height: 7.5vh;
-  width: 15vh;
-  font-size: 4vh;
-  background-color: darkslategray;
-  color: white;
-}
 
 #test {
   width: 4vw;
