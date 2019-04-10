@@ -72,3 +72,7 @@ app.get("/simon", (req, res)=>{
 app.get("/calculator", (req, res)=>{
   res.render("calculator.html", {title: "Calculator"});
 });
+
+app.get("/wikiviewer", (req, res)=>{
+  res.render("wikipediaviewer.html", {title:"Wikipedia Viewer"})
+});
