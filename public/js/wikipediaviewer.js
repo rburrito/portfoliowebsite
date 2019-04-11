@@ -1,4 +1,4 @@
-let linkBox=document.getElementById("two");
+let linkBox = document.getElementById("two");
 
 $(".random-wiki").on("click", function(event) {
   $(this)

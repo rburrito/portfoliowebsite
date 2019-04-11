@@ -5,29 +5,27 @@ html body .block-body {
 
 html body .block-body .beforeMain #name {
   padding: 1vh 0vw 0vh 1.25vw;
-  font-size: 2.85em;
 }
 
 div {
   text-align: center;
   font-family: 'Open Sans';
-  font-size: 1.18em;
+  font-size: 3vh;
 }
 
 .btn {
-  font-size: .7em;
+  font-size: 2.75vh;
   font-family: 'Open Sans';
-  border-radius: 20%;
 }
 
 h1 {
-  font-size: 2.1em;
+  font-size: 5vh;
   font-weight: 600;
 }
 
 .writing {
   padding-top: 15vh;
-  font-size: 1.75em;
+  font-size: 3.5vh;
 }
 
 .get-location,

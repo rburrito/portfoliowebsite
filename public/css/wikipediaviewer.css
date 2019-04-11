@@ -1,3 +1,7 @@
+html body .block-body .beforeMain #name {
+  padding: 1vh 1vw 0vh 1.25vw;
+}
+
 .block-body,
 .text {
   font-weight: 550;

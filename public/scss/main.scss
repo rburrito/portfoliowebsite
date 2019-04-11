@@ -1,15 +1,17 @@
 $primary-color: linear-gradient(#f5efef, #f9dede, #fccecc, #febdb9, #feada6);
 $font-stack: 'Open Sans', Forum;
-$letter-size: 1.65em;
+$letter-size: 3vh;
 $font-colors: black;
 $padding: 0px 1.5vw 0px 1.5vw;
 $name-font: 'Libre Barcode 39','Homemade Apple';
 
 html {
   height: 100%;
+  display: flex;
 
 
 body {
+  flex-grow: 1;
   font-family: $font-stack;
   font-size: $letter-size;
   color: $font-colors;
@@ -31,12 +33,13 @@ body {
     color: $font-colors;
   }
   a:hover{
-    font-size: 1.75em;
+    font-size: 3.25vh;
+    color:  #b54b4b;
   }
 
   .beforeMain {
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
     #nav-bar {
       display: flex;
@@ -68,7 +71,7 @@ body {
       flex-grow: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 1.2vw;
+      grid-gap: 1.2vh;
       .end {
         display: flex;
         justify-content: center;

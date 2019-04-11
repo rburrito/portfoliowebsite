@@ -49,9 +49,10 @@ button {
   border-radius: 20%;
   border-style: outset;
   border-color: #cacaca;
+  color: black;
   font-weight: 600;
   font-size: 3vh;
-  font-family: exo, sans serif;
+  font-family: exo, sans-serif;
 }
 
 .modifySession, .modifyBreak {
