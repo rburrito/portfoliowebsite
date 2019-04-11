@@ -46,9 +46,9 @@ body {
 }
 
 button {
-  border-radius: 20%;
+  border-radius: 8%;
   border-style: outset;
-  border-color: #cacaca;
+  border-color: white;
   color: black;
   font-weight: 600;
   font-size: 3vh;

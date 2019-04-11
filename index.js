@@ -74,5 +74,5 @@ app.get("/calculator", (req, res)=>{
 });
 
 app.get("/wikiviewer", (req, res)=>{
-  res.render("wikipediaviewer.html", {title:"Wikipedia Viewer"})
+  res.render("wikipediaviewer.html", {title:"Wikipedia Viewer"}); 
 });

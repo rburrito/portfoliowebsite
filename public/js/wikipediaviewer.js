@@ -1,4 +1,4 @@
-let linkBox = document.getElementById("two");
+let linkBox=document.getElementById("two");
 
 $(".random-wiki").on("click", function(event) {
   $(this)
@@ -47,3 +47,8 @@ var myhandler = function(event) {
 };
 
 $(".btn-info").on("click", myhandler);
+$("#inputV").on("keypress", function(e){
+  if (e.keyCode == 13){
+    myhandler(e);
+  }
+});
