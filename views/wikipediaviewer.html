@@ -16,27 +16,27 @@
 
 {% block main %}
 
-  <div class="pad" id="two"><a class="randomWiki" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" id="random">Click here for a random article.</a></div>
+<div class="pad" id="two"><a class="randomWiki" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank" id="random">Click here for a random article.</a></div>
 
-  <div class="row">
-    <div class="col-md-offset-3 col-md-6">
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
 
-      <div class="input-group pad" id="one">
+    <div class="input-group pad" id="one">
 
-        <input type="text" class="search-query form-control text" id="inputV" placeholder="Search" name="search-box" />
-        <link href="https://en.wikipedia.org/w/api.php?action=query?for" type="application/query+xml" />
-        <span class="input-group-btn">
-      <button type="button" class="btn btn-info">
-        <span class="glyphicon glyphicon-search"></span>
+      <input type="text" class="search-query form-control text" id="inputV" placeholder="Search" name="search-box" />
+      <link href="https://en.wikipedia.org/w/api.php?action=query?for" type="application/query+xml" />
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-info">
+          <span class="glyphicon glyphicon-search"></span>
         </button>
-        </span>
-
-      </div>
+      </span>
 
     </div>
-  </div>
 
-  <div class="queryBox" id="three"></div>
+  </div>
+</div>
+
+<div class="queryBox" id="three"></div>
 
 
 {% endblock %}

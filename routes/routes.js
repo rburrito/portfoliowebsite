@@ -1,4 +1,7 @@
-module.exports = (app)=>{
+const passport    = require('passport');
+
+module.exports = (app, db)=>{
+
   app.get("/", (req, res)=>{
     res.render("home.html", {title: "Home"});
   });
@@ -35,5 +38,34 @@ module.exports = (app)=>{
     res.render("wikipediaviewer.html", {title:"Wikipedia Viewer"});
   });
 
+  let ensureAuthenticated = (req, res)=>{
+    if (req.isAuthenticated()){
+      return next();
+    }
+    res.redirect('/chatIndex')
+  };
+
+app.route('/auth/github').get(passport.authenticate('github'));
+
+app.route('/auth/github/callback').get(passport.authenticate('github', {failureRedirect:'/chatIndex'}), (req, res)=>{
+  res.redirect('/chatIndex');
+});
+
+app.route("/chatIndex").get((req, res)=>{
+  res.render("chatindex.html", {title: "Socket.IO Chat Room"})
+});
+
+app.route("/chatMain").get(ensureAuthenticated, (req, res)=>{
+  res.render("chatMain.html", {title: "Socket.IO Chat Room"});
+});
+
+app.route("/logout").get((req, res)=>{
+  req.logout();
+  res.redirect('/chatIndex');
+});
+
+app.use((req,res, next)=>{
+  res.status(404).render("pageNotFound.html", {title: "Page Not Found"});
+});
 
 }

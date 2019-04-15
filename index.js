@@ -1,29 +1,46 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
+const mongo = require("mongodb").MongoClient({ useNewUrlParser: true });
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const http = require("http").Server(app);
+const sessionStore = new session.MemoryStore();
+const io = require("socket.io")(http);
+const passportSocketIO = require("passport.socketio");
+
 const helmet = require("helmet");
 const nunjucks = require("nunjucks");
 const sass = require("node-sass");
 const fs = require("fs");
 const routes = require("./routes/routes.js");
+const auth = require("./auth/auth.js");
+const envVARIABLE = require("./env/node-env.json");
+
 const sixtyDaysInSeconds = 5184000;
 
-app.use(helmet.hsts({maxAge: sixtyDaysInSeconds}));
+app.use(helmet.hsts({ maxAge: sixtyDaysInSeconds }));
 app.use(helmet.noSniff());
 app.use(helmet.frameguard({action:"deny"}));
 app.use(helmet.xssFilter());
 app.use(helmet.noCache());
 app.use(helmet.hidePoweredBy());
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
+console.log(envVARIABLE.sessionSecret);
+
+app.use(session({
+  secret: envVARIABLE.sessionSecret,
+  resave: true,
+  saveUninitialized: true,
+  key: 'express.sid',
+  store: sessionStore
+}));
 
 let env= new nunjucks.Environment(new nunjucks.FileSystemLoader("views"));
-
 env.express(app);
-
-const port =process.env.PORT || 3000;
-
-app.listen(port, (req, res)=>{
-  console.log("Now listening on port "+ port);
-});
-
 sass.render({
   file: "./public/scss/main.scss"
 }, (err, result)=>{
@@ -38,12 +55,40 @@ sass.render({
     }
   });
 });
-
 app.use(express.static('public'));
 
-routes(app);
+mongo.connect(envVARIABLE.database, (err, db)=>{
+  if (err) console.log("Database error: " + err);
 
-app.use((req,res, next)=>{
-  console.log("Page not found");
-  res.status(404).render("pageNotFound.html", {title: "Page Not Found"});
+  http.listen(process.env.PORT || 3000);
+
+  auth(app, db);
+  routes(app, db);
+
+  io.use(passportSocketIO.authorize({
+    cookieParser: cookieParser,
+    key: 'express.sid',
+    secret: envVARIABLE.sessionSecret,
+    store: sessionStore
+  }));
+
+  let currentUsers=0;
+
+  io.on('connection', socket=>{
+    ++currentUsers;
+    io.emit('user', {name: socket.request.user.name, currentUsers, connected:true});
+
+    socket.on('disconnect', ()=>{
+      --currentUsers;
+      io.emit('user', {name: socket.request.user.name, currentUsers, connected: false});
+    })
+
+
+    socket.on("chat message", (message)=>{
+      io.emit('chat message', {name: socket.request.user.name, message: message});
+    });
+
+  });
+
+
 });
