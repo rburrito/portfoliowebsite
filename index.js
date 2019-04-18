@@ -57,6 +57,7 @@ app.use(express.static('public'));
 
 mongo.connect(process.env.DATABASE, { useNewUrlParser: true }, (err, db)=>{
   if (err) console.log("Database error: " + err);
+  if (db==undefined) console.log("Database undefined");
 
   http.listen(process.env.PORT || 3000);
   auth(app, db);
