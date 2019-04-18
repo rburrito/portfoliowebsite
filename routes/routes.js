@@ -48,7 +48,7 @@ module.exports = (app, db)=>{
 app.route('/auth/github').get(passport.authenticate('github'));
 
 app.route('/auth/github/callback').get(passport.authenticate('github', {failureRedirect:'/chatIndex'}), (req, res)=>{
-  res.redirect('/chatIndex');
+  res.redirect('/chatMain');
 });
 
 app.route("/chatIndex").get((req, res)=>{

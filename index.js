@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 const app = express();
-const mongo = require("mongodb").MongoClient({ useNewUrlParser: true });
+const mongo = require("mongodb").MongoClient;
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const http = require("http").Server(app);
@@ -15,7 +15,6 @@ const sass = require("node-sass");
 const fs = require("fs");
 const routes = require("./routes/routes.js");
 const auth = require("./auth/auth.js");
-const envVARIABLE = require("./env/node-env.json");
 
 const sixtyDaysInSeconds = 5184000;
 
@@ -29,10 +28,8 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-console.log(envVARIABLE.sessionSecret);
-
 app.use(session({
-  secret: envVARIABLE.sessionSecret,
+  secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
   key: 'express.sid',
@@ -57,18 +54,18 @@ sass.render({
 });
 app.use(express.static('public'));
 
-mongo.connect(envVARIABLE.database, (err, db)=>{
+
+mongo.connect(process.env.DATABASE, { useNewUrlParser: true }, (err, db)=>{
   if (err) console.log("Database error: " + err);
 
   http.listen(process.env.PORT || 3000);
-
   auth(app, db);
   routes(app, db);
 
   io.use(passportSocketIO.authorize({
     cookieParser: cookieParser,
     key: 'express.sid',
-    secret: envVARIABLE.sessionSecret,
+    secret: process.env.SESSION_SECRET,
     store: sessionStore
   }));
 
