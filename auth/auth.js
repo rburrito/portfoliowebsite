@@ -2,7 +2,7 @@ const passport    = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = function (app, db) {
-
+    console.log("Calling all dbs: "+db);
     app.use(passport.initialize());
     app.use(passport.session());
 
@@ -25,6 +25,7 @@ module.exports = function (app, db) {
         callbackURL: "https://ritalawportfoliowebsite.herokuapp.com/auth/github/callback"
       },
       function(accessToken, refreshToken, profile, cb) {
+         console.log(db);
           db.collection('chatusers').findAndModify(
               {id: profile.id},
               {},
