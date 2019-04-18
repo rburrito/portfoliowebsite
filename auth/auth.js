@@ -26,7 +26,7 @@ module.exports = function (app, db) {
       },
       function(accessToken, refreshToken, profile, cb) {
          console.log(db);
-          db.collection('chatusers').findAndModify(
+          db.collection('chatusers').findOneAndUpdate(
               {id: profile.id},
               {},
               {$setOnInsert:{

@@ -38,7 +38,7 @@ module.exports = (app, db)=>{
     res.render("wikipediaviewer.html", {title:"Wikipedia Viewer"});
   });
 
-  let ensureAuthenticated = (req, res)=>{
+  let ensureAuthenticated = (req, res, next)=>{
     if (req.isAuthenticated()){
       return next();
     }
