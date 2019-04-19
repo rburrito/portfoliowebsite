@@ -40,7 +40,10 @@ module.exports = function (app, db) {
              },
              {upsert:true,
               returnNewDocument: true}
-           );
+           ), (err, doc) => {
+                  console.log("Access Token: "+ JSON.stringify(accessToken));
+                  return cb(null, doc.value);
+              };
 
         }));
 
