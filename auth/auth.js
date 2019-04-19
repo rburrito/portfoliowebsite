@@ -25,8 +25,7 @@ module.exports = function (app, db) {
         callbackURL: "https://ritalawportfoliowebsite.herokuapp.com/auth/github/callback"
       },
       function(accessToken, refreshToken, profile, cb) {
-         console.log(db);
-
+           console.log("here1");
            db.collection('chatusers').findOneAndUpdate(
              {id:profile.id},
              {$setOnInsert:{
@@ -39,8 +38,9 @@ module.exports = function (app, db) {
              }
              },
              {upsert:true,
-              returnNewDocument: true}
+              returnNewDocument: false}
            ), (err, doc) => {
+                  console.log("here2");
                   console.log("Access Token: "+ JSON.stringify(accessToken));
                   return cb(null, doc.value);
               };
