@@ -1,5 +1,8 @@
 .chat-center {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .border {
@@ -24,6 +27,7 @@
 }
 
 .chat-box {
+  flex-grow: 1;
   margin-top: 20px;
   height: 500px;
 }
