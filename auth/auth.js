@@ -39,10 +39,10 @@ module.exports = function (app, db) {
              },
              {upsert:true,
               returnNewDocument: false}
-           ), (err, doc) => {
+           ), (err, user) => {
                   console.log("here2");
                   console.log("Access Token: "+ JSON.stringify(accessToken));
-                  return cb(null, doc.value);
+                  return cb(null, user.value);
               };
 
         }));
