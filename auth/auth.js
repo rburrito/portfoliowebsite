@@ -26,29 +26,22 @@ module.exports = function (app, db) {
       },
       function(accessToken, refreshToken, profile, cb) {
          console.log(db);
-          db.collection('chatusers').findOneAndUpdate(
-              {id: profile.id},
-              {},
-              {$setOnInsert:{
-                  id: profile.id,
-                  name: profile.displayName || 'Anonymous',
-                  photo: profile.photos[0].value || '',
-               //   email: profile.emails[0].value || 'No public email',
-                  created_on: new Date(),
-                  provider: profile.provider || '',
-                  chat_messages: 0
-              },$set:{
-                  last_login: new Date()
-              },$inc:{
-                  login_count: 1
-              }},
-              {upsert:true, new: true}, //Insert object if not found, Return new object after modify
-              (err, doc) => {
-                  console.log("Access Token: "+ JSON.stringify(accessToken));
-                  return cb(null, doc.value);
-              }
-          );
-        }
-    ));
+
+           db.collection('chatusers').findOneAndUpdate(
+             {id:profile.id},
+             {$setOnInsert:{
+               id:profile.id,
+               name: profile.displayName || 'Anonymous',
+               photo: profile.photos[0].value || '',
+               created_on: new Date(),
+               provider: profile.provider || '',
+               chat_messages: 0
+             }
+             },
+             {upsert:true,
+              returnNewDocument: true}
+           );
+
+        }));
 
 }
