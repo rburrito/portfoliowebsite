@@ -75,6 +75,7 @@ mongo.connect(process.env.DATABASE, { useNewUrlParser: true }, (err, client)=>{
   io.on('connection', socket=>{
     ++currentUsers;
     io.emit('user', {name: socket.request.user.name, currentUsers, connected:true});
+    console.log(currentUsers);
 
     socket.on('disconnect', ()=>{
       --currentUsers;
