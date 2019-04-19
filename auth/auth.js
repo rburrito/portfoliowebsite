@@ -38,12 +38,11 @@ module.exports = function (app, db) {
              }
              },
              {upsert:true,
-              returnNewDocument: false}
-           ), (err, user) => {
-                  console.log("here2");
-                  console.log("Access Token: "+ JSON.stringify(accessToken));
-                  return cb(null, user.value);
-              };
+              returnNewDocument: true}, function(err, user){
+                if (err) return err;
+                return cb(null, user.value);
+              }
+           );
 
         }));
 
