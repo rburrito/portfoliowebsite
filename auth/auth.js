@@ -2,7 +2,7 @@ const passport    = require('passport');
 const GitHubStrategy = require('passport-github').Strategy;
 
 module.exports = function (app, db) {
-    console.log("Calling all dbs: "+db);
+
     app.use(passport.initialize());
     app.use(passport.session());
 
