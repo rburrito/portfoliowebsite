@@ -1,4 +1,4 @@
-.chat-center {
+html body .block-body .chat-center {
   flex-grow: 1;
   display: flex;
   justify-content: center;
