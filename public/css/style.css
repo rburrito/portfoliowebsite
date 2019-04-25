@@ -33,7 +33,9 @@ html body .block-body .chat-center {
 }
 
 form {
-  background: #000;
+  display: flex;
+  flex-direction: row;
+  background: red;
   padding: 3px;
   width: 500px;
 }
