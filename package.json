@@ -13,16 +13,16 @@
   "author": "Rita Law",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.4",
     "express": "^4.16.4",
-    "helmet": "^3.1.0",
+    "express-session": "^1.16.1",
+    "helmet": "^3.21.2",
+    "mongodb": "^3.2.3",
     "node-sass": "^4.11.0",
     "nunjucks": "^3.2.0",
-    "express-session": "^1.16.1",
-    "mongodb": "^3.2.3",
-    "cookie-parser": "^1.4.4",
-    "socket.io": "^2.2.0",
-    "passport.socketio": "^3.7.0",
     "passport": "^0.4.0",
-    "passport-github": "^1.1.0"
+    "passport-github": "^1.1.0",
+    "passport.socketio": "^3.7.0",
+    "socket.io": "^2.2.0"
   }
 }
