@@ -1,6 +1,9 @@
 {
   "name": "my-portfolio-website",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.3"
+  },
   "description": "A portfolio site to host all my projects from past to present.",
   "main": "index.js",
   "scripts": {
