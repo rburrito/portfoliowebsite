@@ -76,7 +76,6 @@ html {
             display: flex;
             justify-content: center;
             align-items: center;
-            border-style: groove;
           }
         }
 
@@ -101,6 +100,7 @@ html {
           .aboutContainers {
             flex-grow: 1;
             padding: $padding;
+            font-size: 2vh;
           }
         }
 
